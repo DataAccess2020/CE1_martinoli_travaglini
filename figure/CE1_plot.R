@@ -6,11 +6,14 @@ barplot(prop.table(table(dat_pro$imp_rel)),
 
 
 #linear regression plot
-ggplot(filter(dat_pro), aes(y = jst_eut, x = imp_rel)) +
-  geom_smooth(method = "lm", col = "blue") +
-  ylab("justifying euthanasia") +
-  xlab("important of religion") +
-  theme_bw()
+dat_pro %>%
+  ggplot(., aes(x = imp_rel, y = jst_eut)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "red") +
+  scale_y_binned(breaks = seq(1, 10, by = 1)) +
+  xlab("religion") +
+  ylab("euthanasia") +
+  theme_bw() 
 
 
   
