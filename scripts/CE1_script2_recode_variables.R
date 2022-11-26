@@ -18,7 +18,7 @@ dat_pro <- dat %>%
                            to=c(NA,NA,1,2,3,4,5,6,7,8,9,10)))
 
 count(dat_pro$imp_rel)
-count(dat_pro$jst_
+count(dat_pro$jst_eut)
       
 #imp_rel values:
 #1="not at all important"
