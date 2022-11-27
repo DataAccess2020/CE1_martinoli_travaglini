@@ -62,3 +62,9 @@ This means that the equation of the model is Y= 8.32 -1.20x. The graph shows us 
 
 Our analysis suggests that there is a negative correlation between the importance of religion in our lives and how much we tend to justify euthanasia. From the comparison of the means and the regression model we can see that the more one considers religion important in his life, the more he will tend to reject recourse to euthanasia and not justify it. 
 
+## sitography
+
+https://www.agensir.it/quotidiano/2018/2/28/cure-palliative-hassan-qatar-islam-non-ammette-eutanasia-ma-considera-molto-virtuoso-il-sollievo-della-sofferenza/
+
+https://www.repubblica.it/esteri/2020/09/22/news/vaticano_no_a_eutanasia_e_suicidio_assistito_sono_crimini_contro_l_umanita_-268163252/
+
