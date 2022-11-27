@@ -9,5 +9,5 @@ In the folders you can find:
 - Data_orig: it contains the original dataset from EVS2017
 - Data_proc: it contains our processed dataset 
 - Plots: it contains our plots in .jpg
-- Report: it contains our final report in .html
+- Output: it contains our final report in .html
 - Scripts: it contains our scripts for the analysis
