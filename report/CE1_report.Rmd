@@ -41,7 +41,7 @@ Then, we choose as dependent variable the variable ***v156*** which contains the
 ```{r, message = F, echo = F}
 library(tidyverse)
 library(plyr)
-
+setwd("data_orig/ZA7500_v5-0-0.dta")
 dat <- rio::import("data_orig/ZA7500_v5-0-0.dta")
 dat_pro <- dat %>%
   mutate(imp_rel=mapvalues(v6, from=c(-2,-1,1,2,3,4),
