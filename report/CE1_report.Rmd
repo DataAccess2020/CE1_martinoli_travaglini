@@ -1,0 +1,68 @@
+---
+title: "RELIGION AND EUTHANASIA"
+author: "Francesca Martinoli, Simone Travaglini"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+In this little project we want to investigate how the religion impacts the attitude towards euthanasia.
+
+## Methods
+
+In order to investigate the impact of religion on the attitude towards euthanasia, we choose to use the data from the European Values Study - wave 2017. The **European Values Study** is a research program on basic human values (for more information:[European Values Study](https://europeanvaluesstudy.eu/)).
+
+We decided to use the variable ***v6***, which contains the answers to the question Q1 "How important it is in your life: religion".
+
+The values of the variable ***v6*** are:
+
+-   *1 = very important*
+
+-   *2 = Quite important*
+
+-   *3 = Not important*
+
+-   *4 = Not at all important*
+
+    -   *-2 = no answer*
+    -   *-1 = don't know*
+
+We decide to recode this variable into the variable ***imp_rel*** in which we set the values *-2* and *-1* as missing, and inverted the values of the original variable in order to have an increasing scale from *1 = "Not at all important"* to *4 = "very important"*.
+
+Then, we choose as dependent variable the variable ***v156*** which contains the answers to the question Q44H "Please tell me whether you think it can always be justified, never be justified, or something in between: euthanasia". The variable contains values from *1 = "never"* and *10 = "always"*. We choose to recode also this variable so we can set the values *-2 = "no answer"* and *-1 = "don't know"* as missing; the other values remained unchanged.
+
+## Results
+
+
+```{r, message = F, echo = F}
+library(tidyverse)
+library(plyr)
+
+dat <- rio::import("data_orig/ZA7500_v5-0-0.dta")
+dat_pro <- dat %>%
+  mutate(imp_rel=mapvalues(v6, from=c(-2,-1,1,2,3,4),
+                      to=c(NA,NA,4,3,2,1))) %>% 
+  mutate(jst_eut=mapvalues(v156, from=c(-2,-1,1,2,3,4,5,6,7,8,9,10),
+                           to=c(NA,NA,1,2,3,4,5,6,7,8,9,10)))
+
+barplot(prop.table(table(dat_pro$imp_rel)),
+        names.arg = c("Not at all important", "Hardly important", "Quite important", "Very important"),
+        ylab = "Proportion",
+        main = "How important is religion for you?")
+```
+
+
+
+## Discussion
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
