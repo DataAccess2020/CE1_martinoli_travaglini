@@ -11,3 +11,12 @@ In the folders you can find:
 - Plots: it contains our plots in .jpg
 - Output: it contains our final report in .html
 - Scripts: it contains our scripts for the analysis
+
+## Contributions
+- Number of commits:
+  - Francesca Martinoli: 23
+  - Simone Travaglini: 16
+- Number of issues opened: 3
+- Number of pull requests opened: 1
+- Number of pull requests accepted and merged: 1
+- Number of new branches opened: 1
