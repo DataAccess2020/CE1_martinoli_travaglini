@@ -43,7 +43,15 @@ To perform our analysis we started by looking at the distribution of the indepen
 
 ![Source:https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/Bar_religion.jpeg](https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/Bar_religion.jpeg?raw=true)
 
+the bar plot below shows the frequencies for the variable "how important is religion for you," in ascending order. 
+As can we seen, the two categories in the middle are the most numerous and the mode is "3", that is "quite important".
+This shows us that in the sample, religion is a quite important value.
+
+
 ![source:https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/regression_plot.jpeg](https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/regression_plot.jpeg?raw=true)
+
+The regression model shows us that the correlation is negative. in fact, the slope of the straight is -1.20078, while the intercept of the y is 8.32239. 
+This means that the equation of the model is Y= 8.32 -1.20x. The graph shows us that as the importance of religion increases, there is less justification for the use of euthanasia
 
 
 
