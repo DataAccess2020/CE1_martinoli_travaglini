@@ -1,8 +1,8 @@
 # CE1_Martinoli_Travaglini
 Class Exercise 1 - Martinoli Francesca and Travaglini Simone
 
-In this little project we want to investigate how the religion impacts the attitude towards the euthanasia. 
-In order to do it, we choose to use the data from the European Values Survey 2017.
+In this little project we want to investigate how the religion impacts the attitude towards euthanasia. 
+In order to do it, we choose to use the data from the European Values Study 2017.
 
 ## Structure
 In the folders you can find:
