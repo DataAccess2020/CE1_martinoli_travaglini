@@ -10,21 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-In this little project we want to investigate how religion impacts the attitude towards euthanasia. 
-euthanasia, also know as mercy killing, is a legal,ethical and religious issue, which is reflected in a number of concepst and legislative solutions around the world. It is precisely on this last point, religion, that this paper wants to focus. The approach towards euthanasia by the main modern religions is certainly conflicting and usually reject this practice. 
-In a letter written by Samaritanus bonus of the Vatican Congregation, it is reported that "the Church believes it must reiterate as a definitive teaching that euthanasia is a crime against human life because, by such an act, a man chooses to directly cause the death of another innocent human".
-Unlike the approach of those in favour of this practice, euthanasia is directly compared to murder. 
-Not only Christianity, but also Islam expressly forbids the use of this practice.
-Azza Hassan, of the National Center for Cancer Care and Research, Doha (Qatar), says that: "Euthanasia, a practice accepted in the West countries, is not permissible in Muslim countries"; on the contrary, it is viewed "with great fear". 
-The dataset at our disposal helps us to see what the reference values of the people subjected to the questionnaire are, so we are going to relate a variable concerning religion and one about euthanasia.
-The purpose of this is to see if those who identify themselves as religious tend to reject the use of this practice, following the concepts of the religious institutions.
+In this little project we want to investigate how religion impacts the attitude towards euthanasia. **Euthanasia**, also know as mercy killing, **is a legal,ethical and religious issue**, which is reflected in a number of concepst and legislative solutions around the world. It is precisely on this last point, religion, that this paper wants to focus. The approach towards euthanasia by the main modern religions is certainly conflicting and usually reject this practice. In a letter written by Samaritanus bonus of the Vatican Congregation, it is reported that "the Church believes it must reiterate as a definitive teaching that euthanasia is a crime against human life because, by such an act, a man chooses to directly cause the death of another innocent human". Unlike the approach of those in favour of this practice, euthanasia is directly compared to murder. Not only Christianity, but also Islam expressly forbids the use of this practice. Azza Hassan, of the National Center for Cancer Care and Research, Doha (Qatar), says that: "Euthanasia, a practice accepted in the West countries, is not permissible in Muslim countries"; on the contrary, it is viewed "with great fear".
 
+The dataset at our disposal helps us to see what the reference values of the people subjected to the questionnaire are, so we are going to relate a variable concerning religion and one about euthanasia. The purpose of this is to see if those who identify themselves as religious tend to reject the use of this practice, following the concepts of the religious institutions.
 
-
-
-
-
-## Methods
+## Our variables
 
 In order to investigate the impact of religion on the attitude towards euthanasia, we choose to use the data from the European Values Study - wave 2017. The **European Values Study** is a research program on basic human values (for more information:[European Values Study](https://europeanvaluesstudy.eu/)).
 
@@ -45,36 +35,17 @@ The values of the variable ***v6*** are:
 
 We decide to recode this variable into the variable ***imp_rel*** in which we set the values *-2* and *-1* as missing, and inverted the values of the original variable in order to have an increasing scale from *1 = "Not at all important"* to *4 = "very important"*.
 
-Then, we choose as dependent variable the variable ***v156*** which contains the answers to the question Q44H "Please tell me whether you think it can always be justified, never be justified, or something in between: euthanasia". The variable contains values from *1 = "never"* and *10 = "always"*. We choose to recode also this variable so we can set the values *-2 = "no answer"* and *-1 = "don't know"* as missing; the other values remained unchanged.
+Then, we choose as dependent variable the variable ***v156*** which contains the answers to the question Q44H "Please tell me whether you think it can always be justified, never be justified, or something in between: euthanasia". The variable contains values from *1 = "never"* to *10 = "always"*. We choose to recode also this variable so we can set the values *-2 = "no answer"* and *-1 = "don't know"* as missing; the other values remain unchanged.
 
 ## Results
 
+To perform our analysis we started by looking at the distribution of the independent variable ***imp_rel***, shows in this bar chart:
 
-```{r, message = F, echo = F}
-library(tidyverse)
-library(plyr)
-setwd("data_orig/ZA7500_v5-0-0.dta")
-dat <- rio::import("data_orig/ZA7500_v5-0-0.dta")
-dat_pro <- dat %>%
-  mutate(imp_rel=mapvalues(v6, from=c(-2,-1,1,2,3,4),
-                      to=c(NA,NA,4,3,2,1))) %>% 
-  mutate(jst_eut=mapvalues(v156, from=c(-2,-1,1,2,3,4,5,6,7,8,9,10),
-                           to=c(NA,NA,1,2,3,4,5,6,7,8,9,10)))
+![Source:https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/Bar_religion.jpeg](https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/Bar_religion.jpeg?raw=true)
 
-barplot(prop.table(table(dat_pro$imp_rel)),
-        names.arg = c("Not at all important", "Hardly important", "Quite important", "Very important"),
-        ylab = "Proportion",
-        main = "How important is religion for you?")
-```
+![source:https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/regression_plot.jpeg](https://github.com/DataAccess2020/CE1_martinoli_travaglini/blob/main/plots/regression_plot.jpeg?raw=true)
 
 
 
 ## Discussion
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
